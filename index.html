@@ -17,14 +17,32 @@
         }
         .overlay #enzo {
             transform: translateY(-200%);
+            opacity: 0;
             transition: .6s transform ease-in-out;
         }
         .overlay[data-show] #enzo {
             transform: translateY(0);
+            opacity: 1;
+        }
+        .anti-mobile-overlay {
+            pointer-events: none;
+            opacity: 0;
+        }
+        @media (pointer: coarse) {
+            .anti-mobile-overlay {
+                opacity: 1;
+                pointer-events: all;
+            }
         }
     </style>
 </head>
 <body class="h-screen flex justify-center items-center text-center">
+    <div class="anti-mobile-overlay z-50 text-white w-full h-full bg-black fixed flex justify-center items-center">
+        <div class="space-y-3">
+            <p class="font-bold text-5xl">Hey! >:(</p>
+            <p class="font-semibold text-3xl">Ti ho detto di venire da computers</p>
+        </div>
+    </div>
     <div class="overlay w-full h-full fixed z-50">
         <div class="container flex justify-center items-center h-full mx-auto">
             <video id="enzo" class="w-full max-w-[600px] px-2">
