@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demisexuals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .overlay {
+            transition: .4s all ease-in-out;
+            pointer-events: none;
+        }
+        .overlay[data-show] {
+            background: #00000050;
+            backdrop-filter: blur(16px);
+            pointer-events: all;
+        }
+        .overlay #enzo {
+            transform: translateY(-200%);
+            transition: .6s transform ease-in-out;
+        }
+        .overlay[data-show] #enzo {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="h-screen flex justify-center items-center text-center">
+    <div class="overlay w-full h-full fixed z-50">
+        <div class="container flex justify-center items-center h-full mx-auto">
+            <video id="enzo" class="w-full max-w-[600px] px-2">
+                <source src="enzo.mp4" type="video/mp4" >
+            </video>
+        </div>
+    </div>
+    <div class="flex flex-col items-center">
+        <h1 class=" text-5xl font-semibold mb-5">Demisexuals è</h1>
+        <div class=" flex gap-10 text-xl text-white">
+            <button class=" bg-gradient-to-t text-xl from-pink-500 to-pink-400 px-3 py-2 rounded-lg">Stupida</button>
+            <button id="getout" class=" text-xl bg-gradient-to-t from-pink-500 to-pink-400 px-3 py-2 rounded-lg">Carinas</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
